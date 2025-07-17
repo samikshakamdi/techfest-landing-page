@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Techfest Showcase</title>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #1b1932;
+    }
+    body {
+      min-height: 100vh;
+    }
+    .hero-section {
+      min-height: 100vh;
+      width: 100vw;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+      background: linear-gradient(120deg, #38bdf8 0%, #6366f1 60%, #e879f9 100%);
+      animation: bg-move 12s ease-in-out infinite alternate;
+    }
+    @keyframes bg-move {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
+
+    .hero-content {
+      background: rgba(255, 255, 255, 0.13);
+      border-radius: 2.3rem;
+      box-shadow: 0 6px 36px 0 rgba(55,18,93,0.18);
+      padding: 2.8em 2em;
+      text-align: center;
+      max-width: 390px;
+      z-index: 2;
+      position: relative;
+      backdrop-filter: blur(6px);
+      animation: contentFadeIn 1.2s cubic-bezier(.32,1.7,.64,.98);
+    }
+    @keyframes contentFadeIn {
+      from { opacity: 0; transform: translateY(30px);}
+      to { opacity: 1; transform: none;}
+    }
+    .hero-title {
+      font-size: 2.15rem;
+      font-weight: 900;
+      margin-bottom: 16px;
+      color: #fff;
+      letter-spacing: -0.02em;
+      line-height: 1.08;
+      text-shadow: 0 2px 8px rgba(24,21,85,0.07);
+    }
+    .hero-highlight {
+      color: #fcd34d;
+    }
+    .hero-desc {
+      font-size: 1.10rem;
+      color: #f3f4f6;
+      margin-bottom: 29px;
+      opacity: 0.94;
+      line-height: 1.48;
+    }
+    .hero-btn {
+      display: inline-block;
+      font-size: 1.11rem;
+      font-weight: 600;
+      padding: 0.95em 2.4em;
+      background: linear-gradient(90deg, #38bdf8 15%, #e879f9 100%);
+      border: none;
+      border-radius: 2em;
+      color: #fff;
+      cursor: pointer;
+      box-shadow: 0 3px 18px 0 rgba(71,0,145,0.11);
+      transition: background 0.18s, transform 0.14s;
+      text-decoration: none;
+    }
+    .hero-btn:hover, .hero-btn:focus {
+      background: linear-gradient(-90deg, #fde68a 10%, #6366f1 90%);
+      color: #291c62;
+      transform: translateY(-2.5px) scale(1.045);
+    }
+    /* Simple floating dots animation */
+    .dot {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.16;
+      background: #fff;
+      filter: blur(1.5px);
+      animation: floatDot 9s linear infinite;
+      pointer-events: none;
+      z-index: 1;
+    }
+    .dot1 { width: 90px; height: 90px; left: 8vw; top: 72vh; animation-delay: 0s;}
+    .dot2 { width: 55px; height: 55px; right: 9vw; top: 10vh; animation-delay: 2.1s;}
+    .dot3 { width: 75px; height: 75px; right: 24vw; top: 82vh; animation-delay: 4.7s;}
+    @keyframes floatDot {
+      0% { transform: translateY(0);}
+      50% { transform: translateY(-46px);}
+      100% { transform: translateY(0);}
+    }
+    @media (max-width: 500px) {
+      .hero-content { padding: 1.4em 0.32em;}
+      .hero-title { font-size: 1.3rem;}
+      .hero-desc { font-size: 0.92rem;}
+    }
+  </style>
+</head>
+<body>
+  <section class="hero-section">
+    <div class="dot dot1"></div>
+    <div class="dot dot2"></div>
+    <div class="dot dot3"></div>
+    <div class="hero-content">
+      <div class="hero-title">
+        Shape the <span class="hero-highlight">Future</span><br>with Creativity&nbsp;+
+        Code
+      </div>
+      <div class="hero-desc">
+        Discover limitless web possibilities.<br>
+        Join the new era of digital experience—colorful, smooth, and crafted just for you!
+      </div>
+      <a href="https://techfest.org/" class="hero-btn" target="_blank" rel="noopener">Get Started</a>
+    </div>
+  </section>
+</body>
+</html>
